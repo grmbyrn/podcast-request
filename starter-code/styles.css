@@ -1,0 +1,275 @@
+:root{
+    --clr-green: hsla(157, 74%, 61%, 1);
+    --clr-gray: hsla(224, 40%, 83%, 1);
+    --clr-red: hsla(0, 96%, 61%, 1);
+    --spacer: 2rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0 auto;
+    font-family: 'Chivo', sans-serif;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background-color: hsla(224, 35%, 11%, 1);
+}
+
+.container{
+   width: 375px;
+   height: 667px;
+   background: url('./images/mobile/image-host.jpg');
+   background-size: cover;
+   background-position: top;
+   position: relative;
+   display: flex;
+   margin-right: auto;
+   margin-left: auto;
+}
+
+.container::before{
+    content: '';
+    background: hsla(224, 35%, 11%, 1);
+    width: 100%;
+    opacity: .9;
+    /* transition: .5s ease; */
+}
+
+.tablet-img{
+    display: none;
+}
+
+.desktop-img{
+    display: none;
+}
+
+.container-inside{
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    margin-top: 3.875rem;
+}
+
+main{
+    padding: .625rem .625rem;
+}
+
+.text-wrapper{
+    text-align: center;
+}
+
+.title{
+    font-size: 1.625rem;
+    line-height: 2.375rem;
+    color: var(--clr-green);
+    text-transform: uppercase;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    margin-top: 3.5625rem;
+}
+
+main span{
+    color: hsla(0, 0%, 100%, 1);
+}
+
+.content{
+    color: var(--clr-gray);
+    margin-top: 1rem;
+    font-weight: 300;
+}
+
+.icon-wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.icon{
+    height: 17px;
+}
+
+.google{
+    height: 15px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+.email,
+.submit{
+    padding: 9px 0;
+    border-radius: 25px;
+    border: none;
+    line-height: 1.75rem;
+    cursor: pointer;
+}
+
+.email{
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    opacity: .5;
+}
+
+.submit{
+    background-color: var(--clr-green);
+}
+
+.submit:hover,
+.submit:focus{
+    background-color: rgb(21, 172, 114);
+    color: var(--clr-gray);
+}
+
+.text-error{
+    color: var(--clr-red);
+}
+
+.text-success{
+    color: var(--clr-green);
+}
+
+.bg-dots{
+    display: none;
+}
+
+@media (min-width: 768px){
+
+    .container{
+        width: 768px;
+        height: 1000px;
+    }
+
+    .container::before{
+        content: '';
+        opacity: 1;
+    }
+
+    .tablet-img{
+        display: block;
+        object-fit: contain;
+        position: absolute;
+        right: 0;
+    }
+
+    .hero-img{
+        position: absolute;
+        top: -8.75rem;
+        left: 1.25rem;
+    }
+
+    .container-inside{
+        width: 635px;
+        height: 509px;
+        position: absolute;
+        bottom: 18.75rem;
+    }
+
+    .content-wrapper{
+        display: flex;
+        flex-direction: column;
+        background-color: hsla(224, 35%, 11%, 1);
+        position: absolute;
+        top: 6.25rem;
+        padding: 2rem;
+    }
+
+    .text-wrapper{
+        text-align: left;
+    }
+
+    .title{
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+    }
+
+    .content{
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }
+
+    .icon-wrapper{
+        order: 1;
+        align-self: flex-start;
+    }
+
+    .icon{
+        margin-right: 2rem;
+        height: 1.625rem;
+    }
+
+    .form button{
+        border: 0;
+        border-radius: 2rem;
+        position: absolute;
+        height: 2.875rem;
+        width: 162px;
+        right: 25%;
+    }
+
+    .email{
+        width: 460px;
+    }
+
+    .text-error{
+        position: absolute;
+        bottom: 4.5rem;
+    }
+
+    .bg-dots{
+        display: block;
+        position: absolute;
+        bottom: -11.25rem;
+    }
+}
+
+@media (min-width: 1430px){
+    .container{
+        width: 1440px;
+        background: hsla(224, 35%, 11%, 1);
+    }
+
+    .tablet-img{
+        display: none;
+    }
+
+    .desktop-img{
+        display: block;
+        object-fit: contain;
+    }
+
+    .content-wrapper,
+    .hero-img{
+        margin-left: 3rem;
+    }
+
+    .hero-img{
+        margin-top: 6.375rem;
+    }
+
+    .title{
+        font-size: 3.25rem;
+    }
+
+    .bg-dots{
+        display: block;
+        position: absolute;
+        bottom: -1.875rem;
+        right: -43.75rem;
+    }
+}
